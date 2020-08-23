@@ -7,6 +7,7 @@ screen = pygame.display.set_mode([500, 500])
 image = pygame.image.load("boat.png").convert_alpha()
 running = True
 
+boat = hex.Hex(100, image, (255,0,0))
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -14,7 +15,7 @@ while running:
 
     screen.fill((255,255,255))
 
-    hex.draw_ngon(screen, (250, 255,255), 6, 100, (100,100), image)
+    boat.draw(screen, (0, 0))
     pygame.display.update()
 
 pygame.quit()
