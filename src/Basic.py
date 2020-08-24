@@ -1,10 +1,17 @@
 import pygame
 import hex
+import os
+
+try:
+    os.environ["DISPLAY"]
+except:
+    os.environ["SDL_VIDEODRIVER"] = "dummy"
+
 
 pygame.init()
 
 screen = pygame.display.set_mode([500, 500])
-image = pygame.image.load("boat.png").convert_alpha()
+image = pygame.image.load("../images/boat.png").convert_alpha()
 running = True
 
 boat = hex.Hex(100, image, (255,0,0))
