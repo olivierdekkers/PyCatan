@@ -1,4 +1,5 @@
 import pygame
+import pathlib
 import hex
 import os
 
@@ -7,11 +8,18 @@ try:
 except:
     os.environ["SDL_VIDEODRIVER"] = "dummy"
 
+os.environ['SDL_AUDIODRIVER'] = 'dsp'
+
 
 pygame.init()
 
 screen = pygame.display.set_mode([500, 500])
-image = pygame.image.load("../images/boat.png").convert_alpha()
+image = pygame.image.load(
+        os.path.join(
+        os.path.dirname(__file__),
+        "../images/boat.png"
+        )
+    ).convert_alpha()
 running = True
 
 boat = hex.Hex(100, image, (255,0,0))
