@@ -2,24 +2,15 @@ import pygame
 import pathlib
 import hex
 import os
-
-try:
-    os.environ["DISPLAY"]
-except:
-    os.environ["SDL_VIDEODRIVER"] = "dummy"
-
-os.environ['SDL_AUDIODRIVER'] = 'dsp'
+from images.imageloader import ImageLoader
 
 
 pygame.init()
 
 screen = pygame.display.set_mode([500, 500])
-image = pygame.image.load(
-        os.path.join(
-        os.path.dirname(__file__),
-        "../images/boat.png"
-        )
-    ).convert_alpha()
+imagePath = os.path.join(os.path.dirname(os.path.realpath(__file__)), ".\images")
+imLoader = ImageLoader(imagePath)
+image = imLoader.boat
 running = True
 
 boat = hex.Hex(100, image, (255,0,0))
