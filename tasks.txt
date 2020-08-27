@@ -1,0 +1,11 @@
+Simple text file for ideas what to do next
+
+
+
+Board creation (create seeds depending on type of fields, fields numbers and )
+
+
+Think of a way to hold all the different positions.
+
+Make a mesh network to hold all these positions?
+
