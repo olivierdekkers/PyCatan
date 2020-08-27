@@ -9,3 +9,12 @@ Think of a way to hold all the different positions.
 
 Make a mesh network to hold all these positions?
 
+
+
+
+
+Share the points to connecting hexes put them in lists or have each points get a coordinate and then filter duplicates based on coordinates
+
+All the points can have a players resources attached to it if there is nothing it can be replaced
+
+Have roads drawn in an animation if possible
