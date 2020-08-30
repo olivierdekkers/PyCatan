@@ -6,9 +6,10 @@ from images.imageloader import ImageLoader
 
 
 pygame.init()
+screenInfo = pygame.display.Info()
 
-screen = pygame.display.set_mode([500, 500])
-imagePath = os.path.join(os.path.dirname(os.path.realpath(__file__)), ".\images")
+screen = pygame.display.set_mode([screenInfo.current_w, screenInfo.current_h])
+imagePath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "./images")
 imLoader = ImageLoader(imagePath)
 image = imLoader.boat
 running = True
