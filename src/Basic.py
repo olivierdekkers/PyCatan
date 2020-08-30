@@ -23,6 +23,7 @@ while running:
     screen.fill((255,255,255))
 
     boat.draw(screen, (0, 0))
+    boat.draw(screen, boat.upperRight)
     pygame.display.update()
 
 pygame.quit()
