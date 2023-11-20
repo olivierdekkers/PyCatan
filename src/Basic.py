@@ -1,6 +1,5 @@
 import pygame
 import pathlib
-import hex
 import os
 from images.imageloader import ImageLoader
 from circle import Circle, Handelaar, Vikings
@@ -15,9 +14,10 @@ pi2 = 2 * 3.14159265358979
 screen = pygame.display.set_mode([screenInfo.current_w, screenInfo.current_h])
 imagePath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "./images/socPictures")
 imLoader = ImageLoader(imagePath)
-# image = imLoader.ironOre
 running = True
+
 playingField, cornerNodes, centers, roads= board.fourPersonPlayingfield(int(screenInfo.current_w/2), int(screenInfo.current_h/2), imLoader, 150)
+
 def Players(playerNames = [("socVincent", (23,227,101)), ("socLewisSr", (106,142,226)), ("socPlatte", (249,197,216)), ("socStrakke", (23,227,217))]):
     i = 0
     while True:
@@ -25,6 +25,7 @@ def Players(playerNames = [("socVincent", (23,227,101)), ("socLewisSr", (106,142
         i+=1
         i %=4
 size = screenInfo.current_h /2
+
 nodeOptions = [
             (
                 int(cos(i / 6 * pi2) * size + screenInfo.current_w/2) - 75,
@@ -54,13 +55,15 @@ for field in playingField:
         ci.render()
         handelaar = ci
 
+
 players = Players()
 player, color = next(players)
 boat = imLoader.boat
+
 selectedItem = None
 actionNodes = []
 button_pressed = 0
-storedCenter = None
+
 selectableItems = [handelaar, vikings]
 selectableItems.extend(centers)
 selectableItems.extend(cornerNodes)
@@ -68,7 +71,7 @@ selectableItems.extend(roads)
 
 def checkColide(item):
     return item.get_rect().collidepoint(pygame.mouse.get_pos())
-    
+
 
 
 while running:
